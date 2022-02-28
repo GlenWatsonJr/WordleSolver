@@ -11,3 +11,6 @@ known bugs/issues:
 
 *Words that have known duplicate yellow characters will still display solution that have single character.
 
+Version 1.1
+
+Refactored some code in JSON and CSS files.  Changed styling.
