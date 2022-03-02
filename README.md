@@ -1,4 +1,7 @@
 # WordleSolver
+
+glenwatson.net/wordle
+
 A HTML/JS website tool used to help solve wordle problems.
 
 Version 1.0
