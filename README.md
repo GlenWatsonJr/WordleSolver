@@ -20,8 +20,10 @@ Version 1.2
 
 Removed some bugs and refactored some code.
 
-known bugs/issues: \*Not working with multiple yellow characters in guess, dued to flaw regex logic, will fix in future update.
+known bugs/issues: \*Not working with multiple yellow characters in guess, dued to flaw regex logic, will fix in future update.(Fixed 1.3)
 
 Version 1.3
 
 Refactored code to fix yellow character bugs. All should be working properly.
+
+No known bugs/issues at this time.
