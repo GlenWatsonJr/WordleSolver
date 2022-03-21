@@ -207,8 +207,6 @@ function submit() {
 
   let greenEx = new RegExp(arrayToRegex(greenCharArray, "normal"));
   let exclusionEx = new RegExp(arrayToRegex(exclusionArray, "bracket"));
-  let yellowNormEx = new RegExp(arrayToRegex(yellowCharArray, "normal"));
-  let yellowBracEx = new RegExp(arrayToRegex(yellowCharArray, "bracket"));
 
   //checks to see if the word contains green chars and doesn't contain excluded words.
   for (let i = 0; i < arr.length; i++) {
@@ -218,18 +216,68 @@ function submit() {
     //Checks against the green letters and excluded letters
     if (greenEx.test(arr[i]) && !exclusionEx.test(arr[i])) {
       validWord = true;
-    }
 
-    //Removes words that have the yellow letter in the same position.
-    if (yellowNormEx != "/...../") {
-      if (yellowNormEx.test(arr[i])) {
-        validWord = false;
+      let yellowChar0 = true;
+      let yellowChar1 = true;
+      let yellowChar2 = true;
+      let yellowChar3 = true;
+      let yellowChar4 = true;
+      let word = arr[i];
+
+      if (yellowCharArray[0] != ".") {
+        if (word[0] == yellowCharArray[0]) {
+          yellowChar0 = false;
+        }
+        if (!word.includes(yellowCharArray[0])) {
+          yellowChar0 = false;
+        }
       }
-    }
 
-    //Checks to see if the word contains the yellow letters
-    if (yellowBracEx != "/[]/") {
-      if (!yellowBracEx.test(arr[i])) {
+      if (yellowCharArray[1] != ".") {
+        if (word[1] == yellowCharArray[1]) {
+          yellowChar1 = false;
+        }
+        if (!word.includes(yellowCharArray[1])) {
+          yellowChar1 = false;
+        }
+      }
+
+      if (yellowCharArray[2] != ".") {
+        if (word[2] == yellowCharArray[2]) {
+          yellowChar2 = false;
+        }
+        if (!word.includes(yellowCharArray[2])) {
+          yellowChar2 = false;
+        }
+      }
+
+      if (yellowCharArray[3] != ".") {
+        if (word[3] == yellowCharArray[3]) {
+          yellowChar3 = false;
+        }
+        if (!word.includes(yellowCharArray[3])) {
+          yellowChar3 = false;
+        }
+      }
+
+      if (yellowCharArray[4] != ".") {
+        if (word[4] == yellowCharArray[4]) {
+          yellowChar4 = false;
+        }
+        if (!word.includes(yellowCharArray[4])) {
+          yellowChar4 = false;
+        }
+      }
+
+      if (
+        yellowChar0 &&
+        yellowChar1 &&
+        yellowChar2 &&
+        yellowChar3 &&
+        yellowChar4
+      ) {
+        validWord = true;
+      } else {
         validWord = false;
       }
     }
